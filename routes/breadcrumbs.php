@@ -1,0 +1,40 @@
+<?php
+
+Breadcrumbs::for('admin.dashboard', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+});
+
+Breadcrumbs::for('admin.author', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Penulis', route('admin.author'));
+});
+
+Breadcrumbs::for('admin.author.create', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Penulis', route('admin.author'));
+    $trail->push('Tambah Penulis', route('admin.author.create'));
+});
+
+Breadcrumbs::for('admin.author.edit', function ($trail, $author) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Penulis', route('admin.author'));
+    $trail->push('Edit Penulis', route('admin.author.edit',$author));
+});
+
+// Book Index 
+Breadcrumbs::for('admin.book.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Data Buku', route('admin.book.index'));
+});
+
+Breadcrumbs::for('admin.book.create', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Buku', route('admin.book.index'));
+    $trail->push('Tambah Buku', route('admin.book.create'));
+});
+
+Breadcrumbs::for('admin.book.edit', function ($trail, $book) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Buku', route('admin.book.index'));
+    $trail->push('Tambah Buku', route('admin.book.edit', $book));
+});
